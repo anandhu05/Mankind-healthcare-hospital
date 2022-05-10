@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
+{% load static%}
 
-{% block title %} About {% endblock %}
+{% block title %} Departments {% endblock %}
 
-{% block content %}  {% endblock %}
+{% block content %}
+
+<h1 class="text-center">Our Departments</h1>
+<hr>
+<br>
+<img src="{% static '/images/dept.png' %}" class="d-block mx-auto">
+<br>
+<br>
+{%for d in dept%}
+<div class="text-center w-50 mx-auto border-3 border-dark rounded-pill bg-light">
+<h2><u>{{d.dept_name}}</u></h2>
+<p>{{d.dept_description}}</p>
+</div>
+{% endfor %}
+<br><hr><br><br><br>
+<br>
+{% endblock %}
