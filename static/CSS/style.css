@@ -1,0 +1,9 @@
+li:hover
+{
+    background-color :red
+}
+
+.carousel-inner,.carousel-caption{
+    height:500px;
+    
+}
