@@ -1,16 +1,28 @@
 from django.shortcuts import render
+
+from home.forms import BookingForm
 from .models import departments,doctors
+from .forms import BookingForm
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
   
 
 def about(request):
+
      return render(request, 'about.html')
 
 def booking(request):
-
-    return render(request, 'booking.html')
+     if request.method== "POST":
+          form = BookingForm(request.POST)
+          if form.is_valid():
+               form.save()
+               
+     form = BookingForm()
+     form_dict={
+          'form' : form
+     }
+     return render(request, 'booking.html',form_dict)
 
 def doctor(request):
      doct_dict={

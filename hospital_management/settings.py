@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'home',
 ]
 
@@ -128,3 +129,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT= BASE_DIR / 'doctors_images'
 MEDIA_URL= '/media/'
+
+CRISPY_TEMPLATE_PACK = 'Bootstrap4'
